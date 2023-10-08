@@ -1,0 +1,23 @@
+now to authenticate the user we use the token based authentication :
+let say the we made some api's on express.js and they are running at some port and now anyone could access those api only by fetching them so we use authentication here only permitted user can access the connection for an point of time.
+
+when user logges in or signs up with valid email and password so the user also sends a authentication token and then it will provided to each api from loacl storege.
+
+ npm i jsonwebtoken
+
+in the frontend we wil get the token and save it into the loact storeage
+
+
+function verifyToken(req, res, next) {
+    const token=req.headers['authorization']
+    console.log("middlewere called",token)
+    next();
+}
+
+function verifyToken(req, res, next) {
+    const token=req.headers['Authorization']
+    console.log("middlewere called",token)
+    next();
+}
+// this second one is not valid no mattter in which case we weite the headers it has to resolved into small cases.
+so we need to use small latters to use the headers.
